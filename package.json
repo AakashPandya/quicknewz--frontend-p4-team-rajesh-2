@@ -2,11 +2,13 @@
   "name": "quicknewz--frontend-p4-team-rajesh-2",
   "version": "0.1.0",
   "private": true,
+  "main": "src/firebaseApp.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build": "next build && next export",
+    "deploy": "firebase deploy --only functions,hosting"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -20,6 +22,8 @@
     "@types/react-dom": "18.0.9",
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.0",
+    "firebase-admin": "^11.4.1",
+    "firebase-functions": "^4.1.1",
     "next": "13.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",

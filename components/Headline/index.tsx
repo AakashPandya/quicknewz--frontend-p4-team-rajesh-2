@@ -6,13 +6,13 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
-import FacebookIcon from '@mui/icons-material/Facebook';
+import FacebookIcon from "@mui/icons-material/Facebook";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import IconButton from "@mui/material/IconButton";
-import InsertLinkIcon from '@mui/icons-material/InsertLink';
+import InsertLinkIcon from "@mui/icons-material/InsertLink";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { StarOutline } from "@mui/icons-material";
-import TwitterIcon from '@mui/icons-material/Twitter';
+import TwitterIcon from "@mui/icons-material/Twitter";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
 
@@ -25,11 +25,11 @@ interface IHeadlineProps {
 
 const Headline = ({ provider, link, logo, title }: IHeadlineProps) => {
   return (
-    <Card sx={{ maxWidth: 345, minHeight:400 }}>
+    <Card sx={{ maxWidth: 345, minHeight: 400 }}>
       <CardHeader
-        avatar={<Avatar  variant="square" imgProps={{
-          objectFit:'contain'
-        }} sx={{ width: 100, height: 46 }} src={logo} />}
+        avatar={
+          <Avatar variant="square" sx={{ width: 100, height: 46 }} src={logo} />
+        }
         title={provider}
         subheader="September 14, 2022"
       />
@@ -46,10 +46,10 @@ const Headline = ({ provider, link, logo, title }: IHeadlineProps) => {
         <IconButton aria-label="share">
           <FacebookIcon />
         </IconButton>
-         <IconButton aria-label="share">
+        <IconButton aria-label="share">
           <TwitterIcon />
         </IconButton>
-         <IconButton aria-label="share">
+        <IconButton aria-label="share">
           <InsertLinkIcon />
         </IconButton>
       </CardActions>
