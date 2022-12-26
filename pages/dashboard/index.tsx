@@ -10,15 +10,15 @@ export default function Dashboard() {
   const [headlines, setHeadlines] = useState([]);
   useEffect(() => {
     console.log("I AM HERE");
-    // try {
-    //   fetch(
-    //     "https://us-central1-storied-groove-370117.cloudfunctions.net/app/headlines"
-    //   )
-    //     .then((response) => response.json())
-    //     .then((data) => setHeadlines(data));
-    // } catch (ex) {
-    //   console.log(ex);
-    // }
+    try {
+      fetch(
+        "https://us-central1-storied-groove-370117.cloudfunctions.net/app/headlines"
+      )
+        .then((response) => response.json())
+        .then((data) => setHeadlines(data));
+    } catch (ex) {
+      console.log(ex);
+    }
   }, []);
 
   console.log(headlines);
@@ -26,6 +26,7 @@ export default function Dashboard() {
   return (
     <>
       <Navbar />
+      {headlines}
       <Grid container spacing={3} sx={{ padding: "50px" }}>
         {headlines.map(
           ({ createdAt, provider, logo, imageLink, title }, index) => (
