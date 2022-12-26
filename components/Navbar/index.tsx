@@ -176,7 +176,7 @@ function Navbar() {
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            Quick Newz
+            Quick Newz1
           </Typography>
           <Search>
             <SearchIconWrapper>
