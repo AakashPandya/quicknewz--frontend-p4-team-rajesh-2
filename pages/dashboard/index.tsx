@@ -26,7 +26,6 @@ export default function Dashboard() {
   return (
     <>
       <Navbar />
-      {headlines}
       <Grid container spacing={3} sx={{ padding: "50px" }}>
         {headlines.map(
           ({ createdAt, provider, logo, imageLink, title }, index) => (
