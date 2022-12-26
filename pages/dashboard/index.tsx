@@ -9,11 +9,15 @@ import Navbar from "../../components/Navbar/index";
 export default function Dashboard() {
   const [headlines, setHeadlines] = useState([]);
   useEffect(() => {
-    fetch(
-      "https://us-central1-web-news-scraper.cloudfunctions.net/app/headlines"
-    )
-      .then((response) => response.json())
-      .then((data) => setHeadlines(data));
+    try {
+      fetch(
+        "https://us-central1-storied-groove-370117.cloudfunctions.net/app/headlines"
+      )
+        .then((response) => response.json())
+        .then((data) => setHeadlines(data));
+    } catch (ex) {
+      console.log(ex);
+    }
   }, []);
 
   console.log(headlines);
