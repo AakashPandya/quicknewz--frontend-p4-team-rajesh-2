@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Grid from "@mui/material/Grid";
 import Headline from "../../components/Headline/index";
 import Navbar from "../../components/Navbar/index";
+import { Profile } from "../../components/Profile";
 
 export default function Dashboard() {
   const [headlines, setHeadlines] = useState([]);
@@ -26,7 +27,7 @@ export default function Dashboard() {
   return (
     <>
       <Navbar />
-      {headlines}
+      <Profile />
       <Grid container spacing={3} sx={{ padding: "50px" }}>
         {headlines.map(
           ({ createdAt, provider, logo, imageLink, title }, index) => (
