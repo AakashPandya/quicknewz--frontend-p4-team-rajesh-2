@@ -6,11 +6,12 @@ import Grid from "@mui/material/Grid";
 import Headline from "../../components/Headline/index";
 import Navbar from "../../components/Navbar/index";
 import { Profile } from "../../components/Profile";
+import Button from "@mui/material/Button";
 
 export default function Dashboard() {
   const [headlines, setHeadlines] = useState([]);
-  useEffect(() => {
-    console.log("I AM HERE");
+
+  const handleButtonClick = () => {
     try {
       fetch(
         "https://us-central1-storied-groove-370117.cloudfunctions.net/app/headlines"
@@ -20,7 +21,7 @@ export default function Dashboard() {
     } catch (ex) {
       console.log(ex);
     }
-  }, []);
+  };
 
   console.log(headlines);
 
@@ -28,6 +29,7 @@ export default function Dashboard() {
     <>
       <Navbar />
       <Profile />
+      <Button onClick={handleButtonClick}>Display Headlines</Button>
       <Grid container spacing={3} sx={{ padding: "50px" }}>
         {headlines.map(
           ({ createdAt, provider, logo, imageLink, title }, index) => (
