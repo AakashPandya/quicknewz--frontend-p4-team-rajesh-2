@@ -10,27 +10,21 @@ import Button from "@mui/material/Button";
 export default function Dashboard() {
   const [headlines, setHeadlines] = useState([]);
 
-  const handleButtonClick = () => {
-    alert(123);
+  useEffect(() => {
     try {
-      alert(456);
       fetch(
         "https://us-central1-storied-groove-370117.cloudfunctions.net/app/headlines"
       )
         .then((response) => response.json())
         .then((data) => setHeadlines(data));
     } catch (ex) {
-      alert(789);
       console.log(ex);
     }
-  };
-
-  console.log(headlines);
+  }, []);
 
   return (
     <>
       <Navbar />
-      <Button onClick={handleButtonClick}>Display1 Headlines</Button>
       <Grid container spacing={3} sx={{ padding: "50px" }}>
         {headlines.map(
           ({ createdAt, provider, logo, imageLink, title }, index) => (
