@@ -1,4 +1,5 @@
 import * as React from "react";
+import Link from "next/link";
 
 import { useEffect, useState } from "react";
 
@@ -7,7 +8,7 @@ import Headline from "../../components/Headline/index";
 import Navbar from "../../components/Navbar/index";
 import Button from "@mui/material/Button";
 
-export default function Dashboard() {
+export default function Headlines() {
   const [headlines, setHeadlines] = useState([]);
 
   useEffect(() => {
@@ -27,15 +28,17 @@ export default function Dashboard() {
       <Navbar />
       <Grid container spacing={3} sx={{ padding: "50px" }}>
         {headlines.map(
-          ({ createdAt, provider, logo, imageLink, title }, index) => (
+          ({ createdAt, provider, logo, imageLink, title, id }, index) => (
             <Grid item md={4} xs={12} sm={6} lg={3} key={index}>
-              <Headline
-                provider={provider}
-                logo={logo}
-                link={imageLink}
-                title={title}
-                date={createdAt}
-              />
+              <Link href={`headlines/${id}`}>
+                <Headline
+                  provider={provider}
+                  logo={logo}
+                  link={imageLink}
+                  title={title}
+                  date={createdAt}
+                />
+              </Link>
             </Grid>
           )
         )}

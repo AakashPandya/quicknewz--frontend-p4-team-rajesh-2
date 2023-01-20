@@ -1,5 +1,5 @@
-import Dashboard from "./dashboard";
+import Headlines from "./headlines";
 
 export default function Home() {
-  return <Dashboard />;
+  return <Headlines />;
 }
