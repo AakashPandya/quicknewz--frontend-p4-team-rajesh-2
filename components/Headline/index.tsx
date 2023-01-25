@@ -31,7 +31,7 @@ const logos: any = {
 
 const Headline = ({ provider, link, date, logo, title }: IHeadlineProps) => {
   return (
-    <Card sx={{ maxWidth: 345, minHeight: 400 }}>
+    <Card sx={{ maxWidth: 345, height: 450, maxHeight: 450 }}>
       <CardHeader
         avatar={
           <Avatar
@@ -49,7 +49,7 @@ const Headline = ({ provider, link, date, logo, title }: IHeadlineProps) => {
           {title}
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
+      <CardActions sx={{ marginBottom: 0 }} disableSpacing>
         <IconButton aria-label="add to favorites">
           <StarOutline />
         </IconButton>
