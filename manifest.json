@@ -1,0 +1,10 @@
+{
+  "theme_color": "#1fd4c0",
+  "background_color": "#259409",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "Quick newz",
+  "short_name": "Quick newz",
+  "description": "news providers"
+}

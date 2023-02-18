@@ -1,7 +1,9 @@
 import { API_URLS } from "../constants";
 import httpService from "./httpService";
 
-const getAll = async () => {
+const getAll = async (filterQuery?: any) => {
+  if (filterQuery)
+    return await httpService.get(`${API_URLS.HEADLINES}?${filterQuery}`);
   return await httpService.get(API_URLS.HEADLINES);
 };
 
